@@ -1,3 +1,7 @@
+<?php
+require_once 'controller/depratment.php';
+$dep = DepartmentModel::getDep();
+?>
 <div class="row">
     <div class="col-xs-12 col-sm-6">
 <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=add'">Add Department</button>
@@ -39,10 +43,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Oracle</td>
-                        <td>http://oracle.com</td>
+                    <?php
+                    foreach ($dep as $r) {
+                        echo <<<HTML
+                        <tr>
+                        <td>{$r['id']}</td>
+                        <td>{$r['dep_name']}</td>
+                        <td>{$r['dep_root']}</td>
                         <td>
                             <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=manage'" >Manage User</button>
                             <div class="btn-group">
@@ -51,12 +58,17 @@
                                     <span class="fa fa-caret-down"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
-                                    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                                    <li><a href="action/department/del.php?id={$r['id']}"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
                                 </ul>
                             </div>
 
                         </td>
                     </tr>
+HTML;
+                    }
+
+                    ?>
+
 
                     </tbody>
                 </table>

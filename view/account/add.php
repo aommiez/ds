@@ -21,34 +21,31 @@
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" action="action/account/add.php" method="post">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                            <input type="text" name="username" class="form-control" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
                         </div>
                         <label class="col-sm-2 control-label">Passwrd</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" placeholder="password" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
+                            <input type="text" name="password" class="form-control" placeholder="password" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
                         </div>
                     </div>
-
                     <div class="form-group has-warning has-feedback">
                         <label class="col-sm-2 control-label">Select Account Level</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag" multiple="multiple" class="populate placeholder">
-                                <option>Admin</option>
-                                <option>user</option>
+                            <select id="s2_with_tag"  class="populate placeholder" name="level">
+                                <option value="1">Admin</option>
+                                <option value="2">user</option>
                             </select>
                         </div>
-
                     </div>
-
                     <div class="clearfix"></div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-2">
                             <button type="submit" class="btn btn-primary btn-label-left">
-                                <span><i class="fa fa-clock-o"></i></span>
+
                                 Submit
                             </button>
                         </div>

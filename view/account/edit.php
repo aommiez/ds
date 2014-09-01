@@ -1,11 +1,15 @@
-<button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=index'">Back</button>
+<?php
+require_once 'controller/account.php';
+$account = AccountModel::getAccountById($_SESSION['a']);
+?>
+<button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=account&p=index'">Back</button>
 <div class="row">
     <div class="col-xs-12 col-sm-12">
         <div class="box">
             <div class="box-header">
                 <div class="box-name">
                     <i class="fa fa-search"></i>
-                    <span>Add Department form</span>
+                    <span>Edit Account form</span>
                 </div>
                 <div class="box-icons">
                     <a class="collapse-link">
@@ -21,18 +25,23 @@
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" role="form" method="post" action="action/department/add.php">
+                <form class="form-horizontal" role="form" action="action/account/edit.php" method="post">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Department Name</label>
+                        <label class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-4">
-                            <input type="text" name="dep_name" class="form-control" placeholder="Department Name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                            <input type="text" name="username" class="form-control" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                        </div>
+                        <label class="col-sm-2 control-label">Passwrd</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="password" class="form-control" placeholder="password" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
                         </div>
                     </div>
-                    <div class="form-group  has-feedback">
-                        <label class="col-sm-2 control-label">Select Root Dep</label>
+                    <div class="form-group has-warning has-feedback">
+                        <label class="col-sm-2 control-label">Select Account Level</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag" name="dep_root"  class="populate placeholder">
-                                <option value="0">root</option>
+                            <select id="s2_with_tag"  class="populate placeholder" name="level">
+                                <option value="1">Admin</option>
+                                <option value="2">user</option>
                             </select>
                         </div>
                     </div>
@@ -40,7 +49,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-2">
                             <button type="submit" class="btn btn-primary btn-label-left">
-                                <span><i class="fa fa-clock-o"></i></span>
+
                                 Submit
                             </button>
                         </div>

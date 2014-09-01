@@ -21,17 +21,17 @@
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" method="post" action="action/medicine/add.php">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Medicine Name</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" placeholder="Medicine Name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                            <input type="text" name="med_name" class="form-control" placeholder="Medicine Name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
                         </div>
                     </div>
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ขนาด</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag"  class="populate placeholder">
+                            <select id="s2_with_tag"  name="med_size" class="populate placeholder">
                                 <option>1</option>
                                 <option>2</option>
                             </select>
@@ -40,7 +40,7 @@
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ชนิด</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag"  class="populate placeholder">
+                            <select id="s2_with_tag" name="med_kind" class="populate placeholder">
                                 <option>1</option>
                                 <option>2</option>
                             </select>
@@ -49,9 +49,10 @@
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ขนาดบรรจุ</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag"  class="populate placeholder">
+                            <select id="s2_with_tag"  name="med_packaging"class="populate placeholder">
                                 <option>1</option>
                                 <option>2</option>
+                                <option>3</option>
                             </select>
                         </div>
                     </div>

@@ -1,3 +1,7 @@
+<?php
+require_once 'controller/medicine.php';
+$med = MedicineModel::getMedicine();
+?>
 <div class="row">
     <div class="col-xs-12 col-sm-6">
 <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=medicine&p=add'">Add Medicine</button>
@@ -41,12 +45,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Oracle</td>
-                        <td>OracleDB</td>
-                        <td>http://oracle.com</td>
-                        <td>SQL server</td>
+                    <?php
+                        foreach ($med as $r) {
+                            echo <<<HTML
+                            <tr>
+                        <td>{$r['id']}</td>
+                        <td>{$r['name']}</td>
+                        <td>{$r['size']}</td>
+                        <td>{$r['kind']}</td>
+                        <td>{$r['packaging']}</td>
                         <th>
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="#"> Medicine </a>
@@ -54,11 +61,16 @@
                                     <span class="fa fa-caret-down"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
-                                    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                                    <li><a href="action/medicine/del.php?id={$r['id']}"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
                                 </ul>
                             </div>
                         </th>
                     </tr>
+HTML;
+
+                        }
+                    ?>
+
 
                     </tbody>
                 </table>
