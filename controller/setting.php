@@ -5,7 +5,7 @@ return array(
     "db"=> array(
         'host'=> 'localhost',
         'username'=> 'root',
-        'password'=> '',
+        'password'=> '111111',
         'database'=> 'ds'
     )
 );

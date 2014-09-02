@@ -1,6 +1,8 @@
 <?php
 require_once 'controller/account.php';
-$account = AccountModel::getAccountById($_SESSION['a']);
+$account = AccountModel::getAccountById($_GET['id']);
+$act = $account->fetchAll();
+
 ?>
 <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=account&p=index'">Back</button>
 <div class="row">
@@ -29,11 +31,11 @@ $account = AccountModel::getAccountById($_SESSION['a']);
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-4">
-                            <input type="text" name="username" class="form-control" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                            <input type="text" name="username" class="form-control" value="<?php echo $act[0]['username']; ?>" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
                         </div>
                         <label class="col-sm-2 control-label">Passwrd</label>
                         <div class="col-sm-4">
-                            <input type="text" name="password" class="form-control" placeholder="password" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
+                            <input type="text" name="password" class="form-control" value="<?php echo $act[0]['password']; ?>" placeholder="password" data-toggle="tooltip" data-placement="bottom" title="Tooltip for last name">
                         </div>
                     </div>
                     <div class="form-group has-warning has-feedback">
