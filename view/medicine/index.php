@@ -47,13 +47,19 @@ $med = MedicineModel::getMedicine();
                     <tbody>
                     <?php
                         foreach ($med as $r) {
+                            $ms = MedicineModel::getMedSizeById($r['size'])->fetchAll();
+                            $ms = $ms[0]['size_name'];
+                            $mk = MedicineModel::getMedKindById($r['kind'])->fetchAll();
+                            $mk = $mk[0]['kind_name'];
+                            $mp = MedicineModel::getMedPackagingById($r['packaging'])->fetchAll();
+                            $mp = $mp[0]['packaging_name'];
                             echo <<<HTML
                             <tr>
                         <td>{$r['id']}</td>
                         <td>{$r['name']}</td>
-                        <td>{$r['size']}</td>
-                        <td>{$r['kind']}</td>
-                        <td>{$r['packaging']}</td>
+                        <td>{$ms}</td>
+                        <td>{$mk}</td>
+                        <td>{$mp}</td>
                         <th>
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="#"> Medicine </a>

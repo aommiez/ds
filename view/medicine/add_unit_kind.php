@@ -5,7 +5,7 @@
             <div class="box-header">
                 <div class="box-name">
                     <i class="fa fa-search"></i>
-                    <span>Medicine Size</span>
+                    <span>Medicine Kind</span>
                 </div>
                 <div class="box-icons">
                     <a class="collapse-link">
@@ -21,11 +21,11 @@
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" role="form" method="post" action="action/medicine/med_size_add.php">
+                <form class="form-horizontal" role="form" method="post" action="action/medicine/med_kind_add.php">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Medicine Size</label>
+                        <label class="col-sm-2 control-label">Medicine Kind</label>
                         <div class="col-sm-4">
-                            <input type="text" name="med_size" class="form-control" placeholder="Medicine Size Name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
+                            <input type="text" name="kind_name" class="form-control" placeholder="Medicine Kind Name" data-toggle="tooltip" data-placement="bottom" title="Tooltip for name">
                         </div>
                     </div>
                     <div class="clearfix"></div>
