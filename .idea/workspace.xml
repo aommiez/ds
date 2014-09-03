@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc28cad9-e90f-46ae-aeb8-c819e871cc23" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/medicine/add_unit_kind.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/medicine/add_unit_packaging.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/department/edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/department/edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/medicine/edit_unit_kind.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/medicine/edit_unit_packaging.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/medicine/edit_unit_size.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_kind_add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_kind_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_king_del.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_packaging_add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_packaging_del.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_packaging_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_size_add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_size_del.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/medicine/med_size_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/department/add.php" afterPath="$PROJECT_DIR$/view/department/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/medicine/add.php" afterPath="$PROJECT_DIR$/view/medicine/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/medicine/add_unit_size.php" afterPath="$PROJECT_DIR$/view/medicine/add_unit_size.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/depratment.php" afterPath="$PROJECT_DIR$/controller/depratment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/department/index.php" afterPath="$PROJECT_DIR$/view/department/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/medicine/index.php" afterPath="$PROJECT_DIR$/view/medicine/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/department/manage.php" afterPath="$PROJECT_DIR$/view/department/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/medicine.php" afterPath="$PROJECT_DIR$/controller/medicine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/setting.php" afterPath="$PROJECT_DIR$/controller/setting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/medicine/unit.php" afterPath="$PROJECT_DIR$/view/medicine/unit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ds2.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ds.iws" />
@@ -54,7 +29,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/medicine/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="64" selection-start="3063" selection-end="3063" vertical-scroll-proportion="0.76762116" vertical-offset="459" max-vertical-offset="1547">
+            <state line="75" column="0" selection-start="3375" selection-end="3375" vertical-scroll-proportion="0.8986784" vertical-offset="459" max-vertical-offset="1547">
               <folding>
                 <marker date="1409775991478" expanded="true" signature="2380:2541" placeholder="..." />
                 <marker date="1409775991478" expanded="true" signature="2380:3367" placeholder="..." />
@@ -350,19 +325,24 @@
       <created>1409759507417</created>
       <updated>1409759507417</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1409776063897</created>
+      <updated>1409776063897</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -372,7 +352,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -391,7 +370,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Initial commit&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -734,7 +714,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/medicine/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="64" selection-start="3063" selection-end="3063" vertical-scroll-proportion="0.76762116" vertical-offset="459" max-vertical-offset="1547">
+        <state line="75" column="0" selection-start="3375" selection-end="3375" vertical-scroll-proportion="0.8986784" vertical-offset="459" max-vertical-offset="1547">
           <folding>
             <marker date="1409775991478" expanded="true" signature="2380:2541" placeholder="..." />
             <marker date="1409775991478" expanded="true" signature="2380:3367" placeholder="..." />
