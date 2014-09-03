@@ -47,12 +47,17 @@ $account = AccountModel::getAccount();
                     <tbody>
                     <?php
                     foreach (AccountModel::getAccount() as $r) {
+                        if ($r['levels'] == 1 ) {
+                            $l = "Admin";
+                        } else {
+                            $l = "User";
+                        }
                         echo <<<HTML
                         <tr>
                         <td>{$r['id']}</td>
                         <td>{$r['username']}</td>
                         <td>{$r['password']}</td>
-                        <td>{$r['levels']}</td>
+                        <td>{$l}</td>
                         <td>
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>

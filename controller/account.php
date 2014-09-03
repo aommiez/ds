@@ -27,6 +27,12 @@ class AccountModel extends Manager {
         return $cn->query($sql);
     }
 
+    public static function editAccountById ($id,$username,$password,$levels) {
+        $cn = self::getCn();
+        $sql = "UPDATE account SET username = '{$username}',password = '{$password}',levels = '{$levels}' WHERE id = ".$id;
+        $cn->query($sql);
+    }
+
     public static function delAccount ($id) {
         $cn = self::getCn();
         $sql = "DELETE FROM account WHERE id = ".$id;

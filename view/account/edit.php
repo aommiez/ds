@@ -28,6 +28,7 @@ $act = $account->fetchAll();
             </div>
             <div class="box-content">
                 <form class="form-horizontal" role="form" action="action/account/edit.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-4">
@@ -41,9 +42,22 @@ $act = $account->fetchAll();
                     <div class="form-group has-warning has-feedback">
                         <label class="col-sm-2 control-label">Select Account Level</label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag"  class="populate placeholder" name="level">
-                                <option value="1">Admin</option>
-                                <option value="2">user</option>
+                            <select id="s2_with_tag" class="populate placeholder" name="level">
+                                <?php
+                                if ($act[0]['levels'] == 1) {
+                                    echo <<<HTML
+                                    <option value="1" selected>Admin</option>
+                                    <option value="2">user</option>
+HTML;
+                                } else {
+                                    echo <<<HTML
+                                    <option value="1" >Admin</option>
+                                    <option value="2" selected>user</option>
+HTML;
+                                }
+
+?>
+
                             </select>
                         </div>
                     </div>
@@ -51,7 +65,6 @@ $act = $account->fetchAll();
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-2">
                             <button type="submit" class="btn btn-primary btn-label-left">
-
                                 Submit
                             </button>
                         </div>
