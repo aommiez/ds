@@ -1,3 +1,9 @@
+<?php
+require_once 'controller/medicine.php';
+$medSize = MedicineModel::getMedSize();
+$medKind = MedicineModel::getMedKind();
+$medPack = MedicineModel::getMedPackaging();
+?>
 <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=medicine&p=index'">Back</button>
 <div class="row">
     <div class="col-xs-12 col-sm-12">
@@ -32,8 +38,13 @@
                         <label class="col-sm-2 control-label">ขนาด</label>
                         <div class="col-sm-4">
                             <select id="s2_with_tag"  name="med_size" class="populate placeholder">
-                                <option>1</option>
-                                <option>2</option>
+                            <?php
+                                foreach ($medSize as $ms ) {
+                                    echo <<<HTML
+                                    <option value="{$ms['id']}">{$ms['size_name']}</option>
+HTML;
+                                }
+                            ?>
                             </select>
                         </div>
                     </div>
@@ -41,8 +52,13 @@
                         <label class="col-sm-2 control-label">ชนิด</label>
                         <div class="col-sm-4">
                             <select id="s2_with_tag" name="med_kind" class="populate placeholder">
-                                <option>1</option>
-                                <option>2</option>
+                                <?php
+                                foreach ($medKind as $mk ) {
+                                    echo <<<HTML
+                                    <option value="{$mk['id']}">{$mk['kind_name']}</option>
+HTML;
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -50,9 +66,13 @@
                         <label class="col-sm-2 control-label">ขนาดบรรจุ</label>
                         <div class="col-sm-4">
                             <select id="s2_with_tag"  name="med_packaging"class="populate placeholder">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <?php
+                                foreach ($medPack as $mp ) {
+                                    echo <<<HTML
+                                    <option value="{$mp['id']}">{$mp['packaging_name']}</option>
+HTML;
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>

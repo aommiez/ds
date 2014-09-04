@@ -45,11 +45,17 @@ $dep = DepartmentModel::getDep();
                     <tbody>
                     <?php
                     foreach ($dep as $r) {
+                         if ($r['dep_root'] == 0 ) {
+                            $dr = "Root";
+                        } else {
+                            $dd = DepartmentModel::getDepById($r['dep_root'])->fetchAll();
+                            $dr = $dd[0]["dep_name"];
+                        }
                         echo <<<HTML
                         <tr>
                         <td>{$r['id']}</td>
                         <td>{$r['dep_name']}</td>
-                        <td>{$r['dep_root']}</td>
+                        <td>{$dr}</td>
                         <td>
                             <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=manage'" >Manage User</button>
                             <div class="btn-group">
@@ -57,7 +63,7 @@ $dep = DepartmentModel::getDep();
                                 <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
                                     <span class="fa fa-caret-down"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="index.php?g=account&p=edit/{$r['id']}"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                                    <li><a href="index.php?g=department&p=edit&id={$r['id']}"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
                                     <li><a href="action/department/del.php?id={$r['id']}"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
                                 </ul>
                             </div>
