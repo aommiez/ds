@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (empty($_SESSION['user'])) {
+    header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +74,7 @@ session_start();
                                     <i class="fa fa-angle-down pull-right"></i>
                                     <div class="user-mini pull-right">
                                         <span class="welcome">Welcome,</span>
-                                        <span>Admin</span>
+                                        <span><?php echo $_SESSION['user'];?></span>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -106,7 +109,7 @@ session_start();
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="action/account/logout.php">
                                             <i class="fa fa-power-off"></i>
                                             <span class="hidden-sm text">Logout</span>
                                         </a>

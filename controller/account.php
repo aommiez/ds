@@ -39,5 +39,11 @@ class AccountModel extends Manager {
         $cn->query($sql);
     }
 
+    public static function loginAccount ($username,$password) {
+        $cn = self::getCn();
+        $sql = "SELECT COUNT(id) FROM account WHERE username='{$username}' AND password = '{$password}'";
+        return $cn->query($sql);
+    }
+
 }
 ?>
