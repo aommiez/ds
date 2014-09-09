@@ -155,6 +155,16 @@ if (empty($_SESSION['user'])) {
                         <li><a href="index.php?g=medicine&p=unit">Medicine Unit</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="fa fa-picture-o"></i>
+                        <span class="hidden-xs">Stock</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?g=stock&p=index">Dep Stock</a></li>
+                        <!--<li><a href="index.php?g=medicine&p=unit">Medicine Unit</a></li>-->
+                    </ul>
+                </li>
             </ul>
         </div>
         <!--Start Content-->
