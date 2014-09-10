@@ -3,6 +3,8 @@ session_start();
 if (empty($_SESSION['user'])) {
     header("Location: login.php");
 }
+require_once 'controller/depratment.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -161,7 +163,15 @@ if (empty($_SESSION['user'])) {
                         <span class="hidden-xs">Stock</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="index.php?g=stock&p=index">Dep Stock</a></li>
+                        <?php
+                            $res = DepartmentModel::getDepByUserId($_SESSION['user_id']);
+                            foreach ($res as $d ) {
+                                $dep = DepartmentModel::getDepById($d['dep_id'])->fetchAll();
+                                echo <<<HTML
+                                <li><a href="index.php?g=stock&p=index&id={$d['dep_id']}">{$dep[0]['dep_name']}</a></li>
+HTML;
+                            }
+                        ?>
                         <!--<li><a href="index.php?g=medicine&p=unit">Medicine Unit</a></li>-->
                     </ul>
                 </li>

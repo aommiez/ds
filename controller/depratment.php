@@ -39,5 +39,30 @@ class DepartmentModel extends Manager {
         return $cn->query($sql);
     }
 
+    public static function countDepUserByDepIdAndUserId ($dep_id,$user_id) {
+        $cn = self::getCn();
+        $sql = "SELECT COUNT(id) FROM dep_user WHERE dep_id = ".$dep_id." AND user_id = ".$user_id;
+        return $cn->query($sql);
+    }
+
+    public static function getDepByUserId ($user_id) {
+        $cn = self::getCn();
+        $sql = "SELECT * FROM dep_user WHERE user_id = ".$user_id;
+        return $cn->query($sql);
+    }
+
+    public static function updateUserDep ($dep_id,$user) {
+        $cn = self::getCn();
+        $sql = "DELETE FROM dep_user WHERE dep_id = ".$dep_id;
+        $cn->query($sql);
+        foreach ($user as $u ) {
+            $sql1 = "INSERT INTO dep_user(dep_id,user_id) VALUES(:dep_id,:user_id)";
+            $st = $cn->prepare($sql1);
+            $st->execute(array(
+                "dep_id" => $dep_id,
+                "user_id" => $u
+            ));
+        }
+    }
 }
 ?>

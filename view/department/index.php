@@ -57,7 +57,7 @@ $dep = DepartmentModel::getDep();
                         <td>{$r['dep_name']}</td>
                         <td>{$dr}</td>
                         <td>
-                            <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=manage'" >Manage User</button>
+                            <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=department&p=manage&id={$r['id']}'" >Manage User</button>
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="#"> Department </a>
                                 <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
