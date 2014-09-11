@@ -22,6 +22,12 @@ class MedicineModel extends Manager {
         return $cn->query($sql);
     }
 
+    public static function getMedicineById ($id) {
+        $cn = self::getCn();
+        $sql = "SELECT * FROM medicine WHERE id = ".$id;
+        return $cn->query($sql);
+    }
+
     public static function delMedicine ($id) {
         $cn = self::getCn();
         $sql = "DELETE FROM medicine WHERE id = ".$id;

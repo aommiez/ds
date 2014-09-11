@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 10, 2014 at 07:44 AM
+-- Generation Time: Sep 11, 2014 at 08:41 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -70,6 +70,22 @@ INSERT INTO `department` (`id`, `dep_name`, `dep_root`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dep_stock`
+--
+
+CREATE TABLE IF NOT EXISTS `dep_stock` (
+`id` int(11) NOT NULL,
+  `dep_id` int(11) NOT NULL,
+  `med_id` int(11) NOT NULL,
+  `med_value` int(11) NOT NULL,
+  `med_size` int(11) NOT NULL,
+  `med_kind` int(11) NOT NULL,
+  `med_packaging` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dep_user`
 --
 
@@ -100,14 +116,15 @@ CREATE TABLE IF NOT EXISTS `medicine` (
   `size` int(11) NOT NULL,
   `kind` int(11) NOT NULL,
   `packaging` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `medicine`
 --
 
 INSERT INTO `medicine` (`id`, `name`, `size`, `kind`, `packaging`) VALUES
-(3, 'test', 3, 1, 2);
+(3, 'test', 3, 1, 2),
+(4, 'à¸¢à¸² 2', 4, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -181,6 +198,12 @@ ALTER TABLE `department`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dep_stock`
+--
+ALTER TABLE `dep_stock`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dep_user`
 --
 ALTER TABLE `dep_user`
@@ -225,6 +248,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 ALTER TABLE `department`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `dep_stock`
+--
+ALTER TABLE `dep_stock`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `dep_user`
 --
 ALTER TABLE `dep_user`
@@ -233,7 +261,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `med_kind`
 --
