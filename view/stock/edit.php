@@ -1,47 +1,22 @@
 <?php
 require_once 'controller/medicine.php';
-$medName = MedicineModel::getMedicine();
-$medSize = MedicineModel::getMedSize();
-$medKind = MedicineModel::getMedKind();
-$medPack = MedicineModel::getMedPackaging();
+require_once 'controller/stock.php';
 $dep_id = $_GET['dep_id'];
-if (!empty($_GET['med_id'])) {
-    $med = MedicineModel::getMedicineById($_GET['med_id'])->fetchAll();
-    $r = $med[0];
-    $med_name = $r['name'];
-    $ms = MedicineModel::getMedSizeById($r['size'])->fetchAll();
-    $ms = $ms[0]['size_name'];
-    $mk = MedicineModel::getMedKindById($r['kind'])->fetchAll();
-    $mk = $mk[0]['kind_name'];
-    $mp = MedicineModel::getMedPackagingById($r['packaging'])->fetchAll();
-    $mp = $mp[0]['packaging_name'];
-}
+$stock_id = $_GET['id'];
+$stock = StockModel::getStockById($stock_id)->fetchAll();
+$stock = $stock[0];
 
+$med = MedicineModel::getMedicineById($stock['med_id'])->fetchAll();
+$r = $med[0];
+$med_name = $r['name'];
+$ms = MedicineModel::getMedSizeById($r['size'])->fetchAll();
+$ms = $ms[0]['size_name'];
+$mk = MedicineModel::getMedKindById($r['kind'])->fetchAll();
+$mk = $mk[0]['kind_name'];
+$mp = MedicineModel::getMedPackagingById($r['packaging'])->fetchAll();
+$mp = $mp[0]['packaging_name'];
 ?>
 <button type="button" class="btn btn-default" onclick="window.location.href='index.php?g=stock&p=index&id=<?php echo $_GET['dep_id'];?>'">Back</button>
-<script type="application/javascript">
-    function medCg () {
-        var med_id = $('select[name="med_id"]').val();
-        var dep_id = <?php echo $dep_id; ?>;
-        Redirect("index.php?g=stock&p=add&dep_id="+ dep_id +"&med_id="+med_id);
-    }
-    function Redirect (url) {
-        var ua        = navigator.userAgent.toLowerCase(),
-            isIE      = ua.indexOf('msie') !== -1,
-            version   = parseInt(ua.substr(4, 2), 10);
-
-        // IE8 and lower
-        if (isIE && version < 9) {
-            var link = document.createElement('a');
-            link.href = url;
-            document.body.appendChild(link);
-            link.click();
-        }
-
-        // All other browsers
-        else { window.location.replace(url); }
-    }
-</script>
 <div class="row">
     <div class="col-xs-12 col-sm-12">
         <div class="box">
@@ -64,53 +39,37 @@ if (!empty($_GET['med_id'])) {
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" role="form" method="post" action="action/stock/add.php">
+                <form class="form-horizontal" role="form" method="post" action="action/stock/edit.php">
                     <input type="hidden" name="dep_id" value="<?php echo $dep_id; ?>">
+                    <input type="hidden" name="stock_id" value="<?php echo $stock_id; ?>">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Medicine Name </label>
                         <div class="col-sm-4">
-                            <select id="s2_with_tag"  name="med_id" class="populate placeholder" onchange="medCg()">
-                                <?php
-                                if ($_GET['med_id'] != 0) {
-                                    echo <<<HTML
-                                    <option value="{$_GET['med_id']}" selected>{$med_name}</option>
-HTML;
-                                } else {
-                                    echo <<<HTML
-                                    <option value="0">เลือกยา</option>
-HTML;
-                                }
-                                foreach ($medName as $mn ) {
-                                    echo <<<HTML
-                                    <option value="{$mn['id']}">{$mn['name']}</option>
-HTML;
-                                }
-                                ?>
-                            </select>
+                            <input name="med_name" value="<?php echo $med_name; ?>" disabled>
                         </div>
                     </div>
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">จำนวน</label>
                         <div class="col-sm-4">
-                            <input type="text" name="med_value">
+                            <input type="text" name="med_value" value="<?php echo $stock['med_value'];?>">
                         </div>
                     </div>
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ขนาด</label>
                         <div class="col-sm-4">
-                            <input type="text" name="med_size"> <?php echo $ms; ?>
+                            <input type="text" name="med_size" value="<?php echo $stock['med_size'];?>"> <?php echo $ms; ?>
                         </div>
                     </div>
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ชนิด</label>
                         <div class="col-sm-4">
-                            <input type="text" name="med_kind"> <?php echo $mk; ?>
+                            <input type="text" name="med_kind" value="<?php echo $stock['med_kind'];?>"> <?php echo $mk; ?>
                         </div>
                     </div>
                     <div class="form-group  has-feedback">
                         <label class="col-sm-2 control-label">ขนาดบรรจุ</label>
                         <div class="col-sm-4">
-                            <input type="text" name="med_packaging"> <?php echo $mp; ?>
+                            <input type="text" name="med_packaging" value="<?php echo $stock['med_packaging'];?>"> <?php echo $mp; ?>
                         </div>
                     </div>
 
